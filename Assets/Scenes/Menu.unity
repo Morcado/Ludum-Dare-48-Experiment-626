@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 264.49, y: -213}
+  m_AnchoredPosition: {x: 342, y: -236}
   m_SizeDelta: {x: 267.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &170088722
@@ -462,7 +462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: -121.3}
+  m_AnchoredPosition: {x: 342, y: -121.3}
   m_SizeDelta: {x: 267.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &436105781
@@ -739,7 +739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -135, y: 192}
+  m_AnchoredPosition: {x: -144, y: 202}
   m_SizeDelta: {x: 653.1898, y: -16.395897}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643589650
@@ -1121,7 +1121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 245.00003, y: 0}
+  m_AnchoredPosition: {x: 342.00003, y: 0}
   m_SizeDelta: {x: 267.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1267221110
@@ -1650,7 +1650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 151, y: 190}
+  m_AnchoredPosition: {x: 212, y: 218}
   m_SizeDelta: {x: 494.5824, y: -16.3959}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1591998620
@@ -1898,7 +1898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 245.00003, y: -60.4}
+  m_AnchoredPosition: {x: 342.00003, y: -60.4}
   m_SizeDelta: {x: 267.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952557237
@@ -2041,8 +2041,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -157, y: -21}
-  m_SizeDelta: {x: 460.3491, y: 149.7358}
+  m_AnchoredPosition: {x: -173, y: -45.246887}
+  m_SizeDelta: {x: 572.1448, y: 222.2317}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991989957
 MonoBehaviour:
@@ -2066,8 +2066,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Move character with arrow keys or WASD.
 
-    Pick up notes, and discover
-    the truth behind the labyrinth'
+    Pick up all the notes, and
+    discover the truth about the secret conspiracy in the labyrinth.
+
+    Find clues
+    about the exit.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f045c76b2e801cc4d92999003c981890, type: 2}
   m_sharedMaterial: {fileID: 889994216691624818, guid: f045c76b2e801cc4d92999003c981890, type: 2}
@@ -2367,11 +2370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6591721199944680924, guid: 63eab3e2a9d84e546a34542d78973036, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -163
+      value: -251
       objectReference: {fileID: 0}
     - target: {fileID: 6591721199944680924, guid: 63eab3e2a9d84e546a34542d78973036, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6591721199944680924, guid: 63eab3e2a9d84e546a34542d78973036, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2476,11 +2479,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7315333591273170118, guid: 5f97c77a9e2c1c941a3f7f3146dac077, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 268
+      value: 356
       objectReference: {fileID: 0}
     - target: {fileID: 7315333591273170118, guid: 5f97c77a9e2c1c941a3f7f3146dac077, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -218
+      value: -238
       objectReference: {fileID: 0}
     - target: {fileID: 7315333591273170118, guid: 5f97c77a9e2c1c941a3f7f3146dac077, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2577,11 +2580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8631167458741271941, guid: 671010cd8ace1ad43bd1fb2a5a2eb20e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 139
+      value: 216
       objectReference: {fileID: 0}
     - target: {fileID: 8631167458741271941, guid: 671010cd8ace1ad43bd1fb2a5a2eb20e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 191
+      value: 214
       objectReference: {fileID: 0}
     - target: {fileID: 8631167458741271941, guid: 671010cd8ace1ad43bd1fb2a5a2eb20e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
