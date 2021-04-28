@@ -60,12 +60,12 @@ public class AreaTransition : MonoBehaviour
             {
                 if (playerController.lastMovement.x == 1)    // x = 1
                 {
-                    cameraEndPosition = _cameraFollow.transform.position + new Vector3(directionX, 0, -10.5f);
+                    cameraEndPosition = _cameraFollow.transform.position + new Vector3(directionX, 0, 0);
                     other.transform.position += new Vector3(playerDirectionX, 0, 0);
                 }
                 else    // x = -1
                 {
-                    cameraEndPosition = _cameraFollow.transform.position + new Vector3(-directionX, 0, -10.5f);
+                    cameraEndPosition = _cameraFollow.transform.position + new Vector3(-directionX, 0, 0);
                     other.transform.position += new Vector3(-playerDirectionX, 0, 0);
                 }
             }
@@ -76,18 +76,16 @@ public class AreaTransition : MonoBehaviour
                     if (playerController.lastMovement.y == 1) // y = 1   
                     {
 
-                        cameraEndPosition = _cameraFollow.transform.position + new Vector3(0, directionY, -10.5f);
+                        cameraEndPosition = _cameraFollow.transform.position + new Vector3(0, directionY, 0);
                         other.transform.position += new Vector3(0, playerDirectionY, 0);
                     }
                     else // y = -1
                     {
-                        cameraEndPosition = _cameraFollow.transform.position + new Vector3(0, -directionY, -10.5f);
+                        cameraEndPosition = _cameraFollow.transform.position + new Vector3(0, -directionY, 0);
                         other.transform.position += new Vector3(0, -playerDirectionY, 0);
                     }
                 }
-
             }
-
         }
     }
 }
