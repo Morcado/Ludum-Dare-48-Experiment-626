@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 300.0f;
+    [SerializeField] public float speed = 300.0f;
     public Vector2 lastMovement = Vector2.right;
     public static bool PlayerCreated;
     public string nextPlaceName;
@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
 
 
     private void Start()
-    {
+    { 
+        
         _animator = GetComponent<Animator>();
         _playerRigidBody = GetComponent<Rigidbody2D>();
 
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
     }
@@ -52,21 +53,28 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         _walking = false;
-        if (Mathf.Abs(Input.GetAxisRaw(Horizontal)) >= 0.5f)
+        if (Mathf.Abs(Input.GetAxisRaw(Horizontal)) >= 0.5f && Mathf.Abs(Input.GetAxisRaw(Vertical)) >= 0.5f)
         {
             _walking = true;
-            lastMovement = new Vector2(Input.GetAxisRaw(Horizontal),0);
+            lastMovement = new Vector2(Input.GetAxisRaw(Horizontal), Input.GetAxisRaw(Vertical));
+        }
+        else 
+        {
+            if (Mathf.Abs(Input.GetAxisRaw(Horizontal)) >= 0.5f)
+            {
+                _walking = true;
+                lastMovement = new Vector2(Input.GetAxisRaw(Horizontal),0);
+            }
+            if (Mathf.Abs(Input.GetAxisRaw(Vertical)) >= 0.5f)
+            {
+                _walking = true;
+                lastMovement = new Vector2(0,Input.GetAxisRaw(Vertical));
+                
+            }
         }
 
-        if (Mathf.Abs(Input.GetAxisRaw(Vertical)) >= 0.5f)
-        {
-            _walking = true;
-            lastMovement = new Vector2(0,Input.GetAxisRaw(Vertical));
-            
-        }
         Vector2 targetVelocity = new Vector2(Input.GetAxisRaw(Horizontal), Input.GetAxisRaw(Vertical));
         _playerRigidBody.velocity = targetVelocity * (speed * Time.deltaTime);
-
 
         _animator.SetFloat(AnimHorizontal,Input.GetAxisRaw(Horizontal));
         _animator.SetFloat(AnimVertical,Input.GetAxisRaw(Vertical));

@@ -17,6 +17,7 @@ public class AreaTransition : MonoBehaviour
     private Vector3 playerEndPosition;
     private Vector3 playerStartPosition;
     private GameObject player;
+    private PlayerController playerController;
 
     private BoxCollider2D transitions;
 
@@ -25,6 +26,7 @@ public class AreaTransition : MonoBehaviour
     {
         _cameraFollow = Camera.main.GetComponent<CameraFollow>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
         transitions = GameObject.Find("Transitions").GetComponentInChildren<BoxCollider2D>();
     }
     
@@ -39,29 +41,53 @@ public class AreaTransition : MonoBehaviour
             if (currentMoveTime > moveTime) {
                 perc = 1f;
                 cameraIsMoving = false;
+                playerController.speed = 300f;
             }
-            //transitions.enabled = false;
             _cameraFollow.transform.position = Vector3.Lerp(cameraStartPosition, cameraEndPosition, perc);
-            //player.transform.position = Vector3.Lerp(playerStartPosition, playerEndPosition, perc);
         }
         else {
-            //transitions.enabled = true;
             currentMoveTime = 0;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player") {
-
-            cameraEndPosition = _cameraFollow.transform.position + new Vector3(directionX, directionY, -10.5f);
-            cameraStartPosition = _cameraFollow.transform.position;
-
-            playerEndPosition = other.transform.position + new Vector3(playerDirectionX, playerDirectionY, other.transform.position.z);
-            playerStartPosition = other.transform.position;
-
             cameraIsMoving = true;
-            //transitions.enabled = false;
-            other.transform.position += new Vector3(playerDirectionX, playerDirectionY, other.transform.position.z);
+            cameraStartPosition = _cameraFollow.transform.position;
+            playerController.speed = 0;
+
+            if (playerController.lastMovement.y == 0 || name.Contains("LeftRight"))    // y = 0
+            {
+                if (playerController.lastMovement.x == 1)    // x = 1
+                {
+                    cameraEndPosition = _cameraFollow.transform.position + new Vector3(directionX, 0, -10.5f);
+                    other.transform.position += new Vector3(playerDirectionX, 0, 0);
+                }
+                else    // x = -1
+                {
+                    cameraEndPosition = _cameraFollow.transform.position + new Vector3(-directionX, 0, -10.5f);
+                    other.transform.position += new Vector3(-playerDirectionX, 0, 0);
+                }
+            }
+            else  // y = 1 o -1
+            {
+                if (playerController.lastMovement.x == 0 || name.Contains("TopDown"))
+                {
+                    if (playerController.lastMovement.y == 1) // y = 1   
+                    {
+
+                        cameraEndPosition = _cameraFollow.transform.position + new Vector3(0, directionY, -10.5f);
+                        other.transform.position += new Vector3(0, playerDirectionY, 0);
+                    }
+                    else // y = -1
+                    {
+                        cameraEndPosition = _cameraFollow.transform.position + new Vector3(0, -directionY, -10.5f);
+                        other.transform.position += new Vector3(0, -playerDirectionY, 0);
+                    }
+                }
+
+            }
+
         }
     }
 }

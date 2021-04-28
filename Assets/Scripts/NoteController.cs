@@ -31,6 +31,8 @@ public class NoteController : MonoBehaviour
             noteSound.Play();
             screenNote.SetActive(true);
             menuNote.SetActive(true);
+
+           
         }
     }
 
@@ -38,6 +40,7 @@ public class NoteController : MonoBehaviour
         if (collider.tag == "Player")
         {
             screenNote.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }
